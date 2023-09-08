@@ -1,19 +1,32 @@
 package models;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class Employee {
 
     private String id;
-    private LocalDate createdEmployee;
+    private LocalDateTime createdEmployee;
     private BigDecimal baseSalary;
+    private EmployeePosition employeePosition;
 
-    public Employee(BigDecimal baseSalary) {
+    public Employee(BigDecimal baseSalary, EmployeePosition employeePosition) {
         this.id = UUID.randomUUID().toString();
-        this.createdEmployee = LocalDate.now();
+        this.createdEmployee = LocalDateTime.now();
         this.baseSalary = baseSalary;
+        this.employeePosition = employeePosition;
     }
 
+    public EmployeePosition getEmployeePosition() {
+        return employeePosition;
+    }
+
+    public BigDecimal getBaseSalary() {
+        return baseSalary;
+    }
+
+    public LocalDateTime getCreatedEmployee() {
+        return createdEmployee;
+    }
 }
