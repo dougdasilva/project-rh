@@ -1,6 +1,6 @@
 package tax.inss;
 
-import models.EmployeeSalary;
+import models.EmployeeCheck;
 
 import java.math.BigDecimal;
 
@@ -12,6 +12,6 @@ public abstract class Inss {
         this.nextTax = nextTax;
     }
 
-    protected abstract BigDecimal calculateInss(EmployeeSalary employeeSalary);
+    protected abstract BigDecimal calculateInss(EmployeeCheck employeeCheck);
 
 }

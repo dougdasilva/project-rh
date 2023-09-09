@@ -1,6 +1,6 @@
 package tax.fgts;
 
-import models.EmployeeSalary;
+import models.EmployeeCheck;
 
 import java.math.BigDecimal;
 
@@ -10,7 +10,7 @@ public class NoTaxFgtsTrainne extends Fgts {
     }
 
     @Override
-    protected BigDecimal calculateFgts(EmployeeSalary employeeSalary) {
+    protected BigDecimal calculateFgts(EmployeeCheck employeeCheck) {
         return BigDecimal.ZERO;
     }
 }

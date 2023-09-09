@@ -1,12 +1,12 @@
 package tax.inss;
 
-import models.EmployeeSalary;
+import models.EmployeeCheck;
 
 import java.math.BigDecimal;
 
 public class CalculateInss {
 
-    public BigDecimal calculateInss(EmployeeSalary employeeSalary) {
+    public BigDecimal calculateInss(EmployeeCheck employeeCheck) {
         Inss inss = new InssAssistant(
                 new InssProfessionalOne(
                         new InssProfessionalTwo(
@@ -16,6 +16,6 @@ public class CalculateInss {
                         )
                 )
         );
-        return inss.calculateInss(employeeSalary);
+        return inss.calculateInss(employeeCheck);
     }
 }

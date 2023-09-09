@@ -4,19 +4,19 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-public class EmployeeSalary {
+public class EmployeeCheck {
 
     private String id;
     private LocalDateTime createdEmployee;
     private BigDecimal baseSalary;
-    private EmployeePosition employeePosition;
+    private EmployeeSeniority employeeSeniority;
     private BigDecimal bonusValue;
 
-    public EmployeeSalary(BigDecimal baseSalary, EmployeePosition employeePosition) {
+    public EmployeeCheck(BigDecimal baseSalary, EmployeeSeniority employeeSeniority) {
         this.id = UUID.randomUUID().toString();
         this.createdEmployee = LocalDateTime.now();
         this.baseSalary = baseSalary;
-        this.employeePosition = employeePosition;
+        this.employeeSeniority = employeeSeniority;
         this.bonusValue = BigDecimal.ZERO;
     }
 
@@ -24,8 +24,8 @@ public class EmployeeSalary {
         return bonusValue;
     }
 
-    public EmployeePosition getEmployeePosition() {
-        return employeePosition;
+    public EmployeeSeniority getEmployeePosition() {
+        return employeeSeniority;
     }
 
     public BigDecimal getBaseSalary() {

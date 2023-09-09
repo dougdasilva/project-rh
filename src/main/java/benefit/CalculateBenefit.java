@@ -1,12 +1,12 @@
 package benefit;
 
-import models.EmployeeSalary;
+import models.EmployeeCheck;
 
 import java.math.BigDecimal;
 
 public class CalculateBenefit {
 
-    public BigDecimal calculate(EmployeeSalary employeeSalary, AddBenefit benefit) {
-        return benefit.calculate(employeeSalary);
+    public BigDecimal calculate(EmployeeCheck employeeCheck, AddBenefit benefit) {
+        return benefit.calculate(employeeCheck);
     }
 }

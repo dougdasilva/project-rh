@@ -1,7 +1,7 @@
 package tax.fgts;
 
-import models.EmployeePosition;
-import models.EmployeeSalary;
+import models.EmployeeSeniority;
+import models.EmployeeCheck;
 
 import java.math.BigDecimal;
 
@@ -12,12 +12,12 @@ public class FgtsProfessionalEmployee extends Fgts {
     }
 
     @Override
-    protected BigDecimal calculateFgts(EmployeeSalary employeeSalary) {
-        if (employeeSalary.getEmployeePosition().equals(EmployeePosition.PROFESSIONAL_ONE)
-                || employeeSalary.getEmployeePosition().equals(EmployeePosition.PROFESSIONAL_TWO)
-                || employeeSalary.getEmployeePosition().equals(EmployeePosition.PROFESSIONAL_THREE)) {
-            return employeeSalary.getBaseSalary().multiply(new BigDecimal("0.08"));
+    protected BigDecimal calculateFgts(EmployeeCheck employeeCheck) {
+        if (employeeCheck.getEmployeePosition().equals(EmployeeSeniority.PROFESSIONAL_ONE)
+                || employeeCheck.getEmployeePosition().equals(EmployeeSeniority.PROFESSIONAL_TWO)
+                || employeeCheck.getEmployeePosition().equals(EmployeeSeniority.PROFESSIONAL_THREE)) {
+            return employeeCheck.getBaseSalary().multiply(new BigDecimal("0.08"));
         }
-        return nextTax.calculateFgts(employeeSalary);
+        return nextTax.calculateFgts(employeeCheck);
     }
 }

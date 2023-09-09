@@ -1,13 +1,13 @@
 package benefit.automatic;
 
 import benefit.AddBenefit;
-import models.EmployeeSalary;
+import models.EmployeeCheck;
 
 import java.math.BigDecimal;
 
 public class FoodStamps implements AddBenefit {
     @Override
-    public BigDecimal calculate(EmployeeSalary employeeSalary) {
+    public BigDecimal calculate(EmployeeCheck employeeCheck) {
         return new BigDecimal("400");
     }
 }

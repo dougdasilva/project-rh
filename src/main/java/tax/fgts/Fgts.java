@@ -1,6 +1,6 @@
 package tax.fgts;
 
-import models.EmployeeSalary;
+import models.EmployeeCheck;
 
 import java.math.BigDecimal;
 
@@ -12,6 +12,6 @@ public abstract class Fgts {
         this.nextTax = nextTax;
     }
 
-    protected abstract BigDecimal calculateFgts(EmployeeSalary employeeSalary);
+    protected abstract BigDecimal calculateFgts(EmployeeCheck employeeCheck);
 
 }

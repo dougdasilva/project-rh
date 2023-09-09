@@ -1,2 +1,3 @@
 # project-rh
-Projeto baseado no fluxo de um RH (Recursos Humanos)
+### Objetivo
+> Gerar contra-cheque da renda mensal de um(a) funcionário(a).

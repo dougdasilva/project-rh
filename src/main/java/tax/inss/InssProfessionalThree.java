@@ -1,7 +1,7 @@
 package tax.inss;
 
-import models.EmployeeSalary;
-import models.EmployeePosition;
+import models.EmployeeCheck;
+import models.EmployeeSeniority;
 
 import java.math.BigDecimal;
 
@@ -11,10 +11,10 @@ public class InssProfessionalThree extends Inss {
         super(nextTax);
     }
 
-    public BigDecimal calculateInss(EmployeeSalary employeeSalary) {
-        if ((employeeSalary.getEmployeePosition().equals(EmployeePosition.PROFESSIONAL_THREE))) {
-            return employeeSalary.getBaseSalary().multiply(new BigDecimal("0.14"));
+    public BigDecimal calculateInss(EmployeeCheck employeeCheck) {
+        if ((employeeCheck.getEmployeePosition().equals(EmployeeSeniority.PROFESSIONAL_THREE))) {
+            return employeeCheck.getBaseSalary().multiply(new BigDecimal("0.14"));
         }
-        return nextTax.calculateInss(employeeSalary);
+        return nextTax.calculateInss(employeeCheck);
     }
 }

@@ -1,10 +1,10 @@
 package benefit;
 
-import models.EmployeeSalary;
+import models.EmployeeCheck;
 
 import java.math.BigDecimal;
 
 public interface AddBenefit {
 
-    BigDecimal calculate(EmployeeSalary employeeSalary);
+    BigDecimal calculate(EmployeeCheck employeeCheck);
 }

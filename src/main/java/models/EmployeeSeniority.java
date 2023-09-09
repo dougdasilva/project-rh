@@ -1,6 +1,6 @@
 package models;
 
-public enum EmployeePosition {
+public enum EmployeeSeniority {
 
     TRAINEE,
     ASSISTANT,

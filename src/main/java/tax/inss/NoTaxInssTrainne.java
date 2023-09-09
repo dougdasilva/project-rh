@@ -1,6 +1,6 @@
 package tax.inss;
 
-import models.EmployeeSalary;
+import models.EmployeeCheck;
 
 import java.math.BigDecimal;
 
@@ -10,7 +10,7 @@ public class NoTaxInssTrainne extends Inss {
     }
 
     @Override
-    protected BigDecimal calculateInss(EmployeeSalary employeeSalary) {
+    protected BigDecimal calculateInss(EmployeeCheck employeeCheck) {
         return BigDecimal.ZERO;
     }
 }
