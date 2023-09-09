@@ -1,10 +1,10 @@
 package tax;
 
-import models.Employee;
+import models.EmployeeSalary;
 
 import java.math.BigDecimal;
 
 public interface SalaryTax {
 
-    BigDecimal calculateTax(Employee employee);
+    BigDecimal calculateTax(EmployeeSalary employeeSalary);
 }

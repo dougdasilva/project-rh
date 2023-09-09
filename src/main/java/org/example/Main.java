@@ -1,10 +1,9 @@
 package org.example;
 
-import models.Employee;
 import models.EmployeePosition;
-import tax.CalculateSalaryTax;
-import tax.Fgts;
-import tax.Inss;
+import models.EmployeeSalary;
+import tax.fgts.CalculateFgts;
+import tax.inss.CalculateInss;
 
 import java.math.BigDecimal;
 
@@ -12,21 +11,22 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Test");
 
-        Employee employee = new Employee(new BigDecimal("3552"), EmployeePosition.PROFESSIONAL_TWO);
-        CalculateSalaryTax taxFgts = new CalculateSalaryTax();
-        BigDecimal fgtsDiscount = taxFgts.calculate(employee, new Fgts());
+        EmployeeSalary employeeSalary = new EmployeeSalary(new BigDecimal("1000"), EmployeePosition.PROFESSIONAL_THREE);
+        CalculateFgts taxFgts = new CalculateFgts();
+        BigDecimal fgtsDiscount = taxFgts.calculateFgts(employeeSalary).setScale(2);
 
-        CalculateSalaryTax taxInss = new CalculateSalaryTax();
-        BigDecimal inssDiscount = taxInss.calculate(employee, new Inss());
-        BigDecimal netSalary = employee.getBaseSalary().subtract(fgtsDiscount).subtract(inssDiscount);
+        CalculateInss calculateInss = new CalculateInss();
+        BigDecimal inssDiscount = calculateInss.calculateInss(employeeSalary).setScale(2);
+
+        BigDecimal netSalary = employeeSalary.getBaseSalary().subtract(fgtsDiscount).subtract(inssDiscount).setScale(2);
 
         System.out.println("**********  **********  **********");
-        System.out.println("Nível do cargo: " + employee.getEmployeePosition().toString());
+        System.out.println("Nível do cargo: " + employeeSalary.getEmployeePosition().toString());
         System.out.println("Desconto do FGTS: R$ " + fgtsDiscount);
         System.out.println("Desconto do INSS: R$ " + inssDiscount);
-        System.out.println("Salário bruto: R$ " + employee.getBaseSalary());
+        System.out.println("Salário bruto: R$ " + employeeSalary.getBaseSalary());
         System.out.println("Salário líquido: R$ " + netSalary);
-        System.out.println("Data da admissão: " + employee.getCreatedEmployee());
+        System.out.println("Data da admissão: " + employeeSalary.getCreatedEmployee());
         System.out.println("**********  **********  **********");
 
     }
