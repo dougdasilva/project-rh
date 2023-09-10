@@ -7,14 +7,14 @@ import java.util.UUID;
 public class EmployeeCheck {
 
     private String id;
-    private LocalDateTime createdEmployee;
+    private LocalDateTime createdCheck;
     private BigDecimal baseSalary;
     private EmployeeSeniority employeeSeniority;
     private BigDecimal bonusValue;
 
     public EmployeeCheck(BigDecimal baseSalary, EmployeeSeniority employeeSeniority) {
         this.id = UUID.randomUUID().toString();
-        this.createdEmployee = LocalDateTime.now();
+        this.createdCheck = LocalDateTime.now();
         this.baseSalary = baseSalary;
         this.employeeSeniority = employeeSeniority;
         this.bonusValue = BigDecimal.ZERO;
@@ -32,7 +32,7 @@ public class EmployeeCheck {
         return baseSalary;
     }
 
-    public LocalDateTime getCreatedEmployee() {
-        return createdEmployee;
+    public LocalDateTime getCreatedCheck() {
+        return createdCheck;
     }
 }

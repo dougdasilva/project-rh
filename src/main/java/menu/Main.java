@@ -34,7 +34,7 @@ public class Main {
         System.out.println("Vale alimentação: R$ " + benefitStamps);
         System.out.println("Salário bruto: R$ " + employeeCheck.getBaseSalary());
         System.out.println("Salário líquido: R$ " + netSalary);
-        System.out.println("Data da admissão: " + employeeCheck.getCreatedEmployee());
+        System.out.println("Data da admissão: " + employeeCheck.getCreatedCheck());
         System.out.println("**********  **********  **********");
 
     }
