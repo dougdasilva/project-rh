@@ -3,8 +3,7 @@ package menu;
 import benefit.CalculateBenefit;
 import benefit.automatic.FoodStamps;
 import benefit.automatic.TransportationVouchers;
-import models.EmployeeSeniority;
-import models.EmployeeCheck;
+import models.*;
 import tax.fgts.CalculateFgts;
 import tax.inss.CalculateInss;
 
@@ -36,6 +35,13 @@ public class Main {
         System.out.println("Salário líquido: R$ " + netSalary);
         System.out.println("Data da admissão: " + employeeCheck.getCreatedCheck());
         System.out.println("**********  **********  **********");
+
+        PersonalData data = new PersonalData("08956036403", "Douglas da Silva", "das@asd", new Address(), "1992-03-27");
+        Employee employee = new Employee(data, employeeCheck);
+
+        System.out.println("CPF: " + employee.getData().getFederalTaxNumber());
+        System.out.println("Nome: " + employee.getData().getName());
+        System.out.println("Email: " + employee.getData().getEmail());
 
     }
 }
