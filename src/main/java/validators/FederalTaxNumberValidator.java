@@ -28,6 +28,6 @@ public class FederalTaxNumberValidator {
             throw new RuntimeException("Failed request!");
         }
 
-        return response.statusCode() == 200 ? true : false;
+        return response.statusCode() == 200;
     }
 }

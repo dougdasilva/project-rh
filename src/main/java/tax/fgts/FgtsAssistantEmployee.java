@@ -13,7 +13,7 @@ public class FgtsAssistantEmployee extends Fgts {
 
     @Override
     protected BigDecimal calculateFgts(EmployeeCheck employeeCheck) {
-        if (employeeCheck.getEmployeePosition().equals(EmployeeSeniority.ASSISTANT)) {
+        if (employeeCheck.getEmployeeSeniority().equals(EmployeeSeniority.ASSISTANT)) {
             return employeeCheck.getBaseSalary().multiply(new BigDecimal("0.02"));
         }
 

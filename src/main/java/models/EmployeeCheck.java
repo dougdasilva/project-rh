@@ -24,7 +24,7 @@ public class EmployeeCheck {
         return bonusValue;
     }
 
-    public EmployeeSeniority getEmployeePosition() {
+    public EmployeeSeniority getEmployeeSeniority() {
         return employeeSeniority;
     }
 

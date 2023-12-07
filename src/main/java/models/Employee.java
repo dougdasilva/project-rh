@@ -9,7 +9,8 @@ public class Employee {
     private EmployeeCheck employeeCheck;
     private LocalDateTime createdEmployee;
 
-    public Employee(PersonalData data, EmployeeCheck employeeCheck) {
+    public Employee(Long id, PersonalData data, EmployeeCheck employeeCheck) {
+        this.id = id;
         this.data = data;
         this.employeeCheck = employeeCheck;
         this.createdEmployee = LocalDateTime.now();

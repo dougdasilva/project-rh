@@ -13,7 +13,7 @@ public class InssAssistant extends Inss {
 
     @Override
     public BigDecimal calculateInss(EmployeeCheck employeeCheck) {
-        if (employeeCheck.getEmployeePosition().equals(EmployeeSeniority.ASSISTANT)) {
+        if (employeeCheck.getEmployeeSeniority().equals(EmployeeSeniority.ASSISTANT)) {
             return employeeCheck.getBaseSalary().multiply(new BigDecimal("0.075"));
         }
         return nextTax.calculateInss(employeeCheck);

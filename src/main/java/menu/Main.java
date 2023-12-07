@@ -26,7 +26,7 @@ public class Main {
         BigDecimal netSalary = employeeCheck.getBaseSalary().subtract(fgtsDiscount).subtract(inssDiscount).setScale(2);
 
         System.out.println("**********  **********  **********");
-        System.out.println("Nível do cargo: " + employeeCheck.getEmployeePosition().toString());
+        System.out.println("Nível do cargo: " + employeeCheck.getEmployeeSeniority().toString());
         System.out.println("Desconto do FGTS: R$ " + fgtsDiscount);
         System.out.println("Desconto do INSS: R$ " + inssDiscount);
         System.out.println("Vale transporte: R$ " + benefitVoucher);
@@ -36,8 +36,8 @@ public class Main {
         System.out.println("Data da admissão: " + employeeCheck.getCreatedCheck());
         System.out.println("**********  **********  **********");
 
-        PersonalData data = new PersonalData("08956036403", "Douglas da Silva", "das@asd", new Address(), "1992-03-27");
-        Employee employee = new Employee(data, employeeCheck);
+        PersonalData data = new PersonalData("18956036403", "Douglas da Silva", "das@asd", new Address(), "1992-03-27");
+        Employee employee = new Employee(1L, data, employeeCheck);
 
         System.out.println("CPF: " + employee.getData().getFederalTaxNumber());
         System.out.println("Nome: " + employee.getData().getName());

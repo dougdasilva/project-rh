@@ -12,7 +12,7 @@ public class InssProfessionalOne extends Inss {
     }
 
     public BigDecimal calculateInss(EmployeeCheck employeeCheck) {
-        if (employeeCheck.getEmployeePosition().equals(EmployeeSeniority.PROFESSIONAL_ONE)) {
+        if (employeeCheck.getEmployeeSeniority().equals(EmployeeSeniority.PROFESSIONAL_ONE)) {
             return employeeCheck.getBaseSalary().multiply(new BigDecimal("0.09"));
         }
         return nextTax.calculateInss(employeeCheck);
